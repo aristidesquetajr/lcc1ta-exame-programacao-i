@@ -1,34 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "letter.h"
 
-char B[5][5] = {
-    {'*', '*', '*', '*', ' '},
-    {'*', ' ', ' ', ' ', '*'},
-    {'*', '*', '*', '*', ' '},
-    {'*', ' ', ' ', ' ', '*'},
-    {'*', '*', '*', '*', ' '}};
-char A[5][5] = {
-    {'*', '*', '*', '*', '*'},
-    {'*', ' ', ' ', ' ', '*'},
-    {'*', '*', '*', '*', '*'},
-    {'*', ' ', ' ', ' ', '*'},
-    {'*', ' ', ' ', ' ', '*'}};
+void printMatriz()
+{
+  system("clear");
 
-char I[5][5] = {
-    {'*', '*', '*', '*', '*'},
-    {' ', ' ', '*', ' ', ' '},
-    {' ', ' ', '*', ' ', ' '},
-    {' ', ' ', '*', ' ', ' '},
-    {'*', '*', '*', '*', '*'}};
-
-void printMatriz() {
-  for (int l = 0; l < 5; l++) {
+  for (int l = 0; l < 5; l++)
+  {
     for (int c = 0; c < 5; c++)
       printf("%c", B[l][c]);
-    printf(" ");
+    // printf("\033[34m%c\033[0m", B[l][c]);
+    printf("\t");
 
     for (int c = 0; c < 5; c++)
       printf("%c", A[l][c]);
-    printf(" ");
+    printf("\t");
 
     for (int c = 0; c < 5; c++)
       printf("%c", I[l][c]);
@@ -37,14 +24,29 @@ void printMatriz() {
   }
 }
 
-void main() {
-  int qtdPrint;
-
-  printf("Quantas vezes deseja imprimir a matriz? ");
-  scanf("%d", &qtdPrint);
-
-  for (int i = 1; i <= qtdPrint; i++) {
-    printf("\n");
-    printMatriz();
+void inputCaracter(char matriz[5][5])
+{
+  for (int l = 0; l < 5; l++)
+  {
+    for (int c = 0; c < 5; c++)
+    {
+      if (matriz[l][c] == '*')
+        continue;
+      else
+      {
+        printMatriz();
+        printf("Informe um caracter: ");
+        scanf(" %c", &matriz[l][c]);
+      }
+    }
   }
+}
+
+void main()
+{
+  inputCaracter(B);
+  inputCaracter(A);
+  inputCaracter(I);
+
+  printMatriz();
 }
