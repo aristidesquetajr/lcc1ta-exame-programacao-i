@@ -10,7 +10,6 @@ void printMatriz()
   {
     for (int c = 0; c < 5; c++)
       printf("%c", B[l][c]);
-    // printf("\033[34m%c\033[0m", B[l][c]);
     printf("\t");
 
     for (int c = 0; c < 5; c++)
