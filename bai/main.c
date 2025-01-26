@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "letter.h"
+#include "letter.h" // Importa os vetores que forma a palavra BAI
 
-void printMatriz()
+void printMatriz() // Função que imprime a matriz
 {
   system("clear");
 
@@ -23,7 +23,7 @@ void printMatriz()
   }
 }
 
-void inputCaracter(char matriz[5][5])
+void inputCaracter(char matriz[5][5]) // Função que preenche cada matriz
 {
   for (int l = 0; l < 5; l++)
   {
