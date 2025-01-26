@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gcc functions.c main.c -o main && ./main
+
+rm main
