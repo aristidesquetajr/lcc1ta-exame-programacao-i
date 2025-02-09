@@ -8,6 +8,7 @@
     "*.css": "css",
     ".dev.vars": "dotenv",
     "letter.h": "c",
-    "functions.h": "c"
+    "functions.h": "c",
+    "unistd.h": "c"
   }
 }
