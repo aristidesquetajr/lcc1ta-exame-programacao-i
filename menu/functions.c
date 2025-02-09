@@ -9,7 +9,7 @@ void inputMatriz(int matriz[5][5])
   {
     for (int c = 0; c < 5; c++)
     {
-      int num = rand() % 10; // Gera numeros aleatorios de 0 a 10
+      int num = (rand() % (5 - 1)) + 1; // Gera numeros aleatorios de 1 a 4
       matriz[l][c] = num;
       printf("Informe um caracter [%d][%d]: %d\n", l, c, num);
       // scanf("%d", &matriz[l][c]);
@@ -52,7 +52,7 @@ void transformeTriangulo(char triangulo[5][5], int matriz[5][5])
     for (int c = 0; c < 5; c++)
     {
       triangulo[l][c] = '0' + matriz[l][c];
-      if (((l > 0) && (l < 4)) && ((c > 0) && (c < 4)))
+      if (((l >= 1) && (l <= 3)) && ((c >= 1) && (c <= 3)) && (l >= c))
       {
         triangulo[l][c] = '*';
       }
@@ -100,20 +100,22 @@ int calcValTotalMargins(int matriz[5][5])
   return total;
 }
 
-int calcDoubleValueTriangulo(int matriz[5][5])
+void printDoubleValueTriangulo(int matriz[5][5])
 {
-  int total = 0;
-
   for (int l = 0; l < 5; l++)
   {
     for (int c = 0; c < 5; c++)
     {
-      if (((l > 0) && (l < 4)) && ((c > 0) && (c < 4)))
+      if (((l >= 1) && (l <= 3)) && ((c >= 1) && (c <= 3)) && (l >= c))
       {
-        total += (matriz[l][c] * 2);
+        printf("%d\t", matriz[l][c] * 2);
+      }
+      else
+      {
+        printf("%d\t", matriz[l][c]);
       }
     }
+    printf("\n");
   }
-
-  return total;
+  printf("\n\n");
 }

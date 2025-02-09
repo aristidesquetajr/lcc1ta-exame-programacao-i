@@ -41,7 +41,8 @@ void main()
       break;
 
     case MULT_2_TRIANGULO:
-      printf("\nA multiplicação por 2 triângulo retângulo é %d\n\n", calcDoubleValueTriangulo(matriz));
+      printf("\nMultiplicação por 2 triângulo retângulo\n\n");
+      printDoubleValueTriangulo(matriz);
       break;
 
     case SAIR:

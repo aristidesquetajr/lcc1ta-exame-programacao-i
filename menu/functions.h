@@ -10,4 +10,4 @@ void printMatrizTriangulo(char matriz[5][5]);
 
 int calcValTotalMargins(int matriz[5][5]);
 
-int calcDoubleValueTriangulo(int matriz[5][5]);
+void printDoubleValueTriangulo(int matriz[5][5]);
